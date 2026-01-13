@@ -41,7 +41,7 @@ sudo systemctl enable jenkins
 
 ```
 
-Access the UI at `http://<Master-Public-IP>:8080`. Retrieve the initial admin password with:
+Access the Jenkins at `http://<Master-Public-IP>:8080`. Retrieve the initial admin password with:
 `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
 
 ---
@@ -73,7 +73,7 @@ sudo usermod -aG docker jenkins # Grant permission to use Docker
 1. Switch to the jenkins user: `sudo su - jenkins`
 2. Create folder: `mkdir .ssh && chmod 700 .ssh`
 3. On your **Local Machine**, generate the public key from your `.pem` key:
-`ssh-keygen -y -f your-aws-key.pem`
+`ssh-keygen -y -f <your-aws-key>.pem`
 4. Copy that output and paste it into `/home/jenkins/.ssh/authorized_keys` on the Slave.
 
 ---
